@@ -1,5 +1,9 @@
-const url = "http://newsapi.org/v2/top-headlines?country=in&apiKey=2178b874708b487c9f4901ceeeee9b77";
+const url = "http://api.weatherstack.com/current?access_key=dc9867c8d42970bf5290b8a660957fc0&query=New%20York";
+const content = document.getElementById('content')
 
+console.log(content)
 function getdata() {
-  fetch(url).then(data => data.json()).then(data => console.log(data));
+  fetch(url).then(data => data.json()).then((data) => (content.textContent = data.current.temperature));
 }
+
+getdata()
